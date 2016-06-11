@@ -1,0 +1,15 @@
+---
+- name: kill rsync-daemon
+  shell: kill $(cat rsyncd.pid)
+  args:
+    chdir: "{{ rsync_data }}"
+  ignore_errors: yes
+
+- name: clean rsyncd.pid
+  file: path={{ rsync_data }}/rsyncd.pid state=absent
+  ignore_errors: yes
+
+- name: start rsync-daemon
+  shell: rsync --daemon --config="rsyncd.conf"
+  args:
+    chdir: "{{ rsync_data }}"

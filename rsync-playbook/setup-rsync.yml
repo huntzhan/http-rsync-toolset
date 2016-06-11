@@ -1,0 +1,8 @@
+---
+- hosts: server
+  vars:
+    rsync_data: /root/rsyncd_data
+    rsync_username: testuser
+    rsync_password: 6f96e770d3a
+  roles:
+    - rsync

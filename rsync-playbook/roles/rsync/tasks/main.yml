@@ -1,0 +1,15 @@
+---
+- name: make sure path exists.
+  file: path={{ rsync_data }} state=directory
+
+- name: setup rsync conf
+  template: src=rsyncd.conf dest={{ rsync_data }}/rsyncd.conf
+
+- name: setup rsync secret
+  template: src=rsyncd.secrets dest={{ rsync_data }}/rsyncd.secrets
+
+- command: /bin/true
+  notify:
+    - kill rsync-daemon
+    - clean rsyncd.pid
+    - start rsync-daemon
