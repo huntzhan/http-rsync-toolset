@@ -2,5 +2,6 @@ include README.md
 include requirements.txt
 recursive-include tests *
 recursive-include scripts *
+recursive-include http_rsync_toolset/rsync-playbook *
 global-exclude __pycache__
 global-exclude *.py[co]
