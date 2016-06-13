@@ -50,17 +50,16 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
     ],
     # critical configurations.
     packages=find_packages(),
+
     include_package_data=True,
+
     install_requires=load_requirements('requirements.txt'),
     entry_points={
         'console_scripts': [
-            'http_rsync_toolset_cli = http_rsync_toolset.main:entry_point'
+            'http_rsync_toolset_deploy = http_rsync_toolset.main:deploy'
         ],
     },
 )

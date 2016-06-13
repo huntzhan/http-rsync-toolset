@@ -15,3 +15,5 @@ EMAILS = [
 LICENSE = ''
 URL = ''
 DESCRIPTION = 'setting up rsync daemon and synchronize file/directory.'
+
+TARGET_NAME = 'rsync-playbook'

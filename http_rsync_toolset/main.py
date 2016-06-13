@@ -7,16 +7,13 @@ from future.builtins.disabled import *  # noqa
 
 from os import getcwd
 from os.path import dirname, join
+
 from cpl import replace
 
-
-def entry_point():
-    print("entry_point")
-    return 42
+from http_rsync_toolset.metadata import TARGET_NAME
 
 
 def deploy():
-    TARGET_NAME = 'rsync-playbook'
     src = join(
         dirname(__file__),
         TARGET_NAME,
